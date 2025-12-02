@@ -1,98 +1,75 @@
+import java.util.Arrays;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         //задача 1;
         System.out.println("задача 1");
-        int firstFriday = 7;
-        for (int i = firstFriday; i <= 31; i = i + 7) {
-            System.out.println("Сегодня пятница, " + i + "-е число. Необходимо подготовить отчет");
-        }
+        int[] massiveFirst = new int[]{1, 2, 3};
+        double[] massiveSecond = {1.57, 7.654, 9.986};
+        int[] week = {7, 6, 5, 4, 3, 2, 1};
 
-        //задача 2 do-while method
-        System.out.println("задача 2 вариант do-while ");
-        int distance = 0;
-        // int z = 0; // message counter
-        do {
-            // z++;
-            System.out.println("Держитесь! Осталось " + (42195 - distance) + " метров");
-            distance = distance + 500;
-        } while (distance < 42195);
+        //задача 2;
+        System.out.println("задача 2");
+        // System.out.println(Arrays.toString(massiveFirst));
+        // System.out.println(Arrays.toString(massiveSecond));
+        // System.out.println(Arrays.toString(week));
 
-        //задача 2 for method
-        System.out.println("задача 2 вариант for");
-        distance = 0;
-        //z = 0; // message counter
-        for (; distance < 42195; distance = distance + 500) {
-            //   z++;
-            System.out.println("Держитесь! Осталось " + (42195 - distance) + " метров");
-        }
-
-        //задача 3 while method
-        System.out.println("задача 3 вариант while ");
-        int money = 1500;
-        int day = 0;
-        while (money >= 100) {
-            day++;
-            if (day >= 5 && day % 5 == 0) {
-                continue;
+        for (int i = 0; i < massiveFirst.length; i++) {
+            if (i == massiveFirst.length - 1) {
+                System.out.println(massiveFirst[i]);
+                break;
             }
-            money = money - 100;
+            System.out.print(massiveFirst[i] + ", ");
         }
-        System.out.println("вы можете оставить свой автомобиль на количество дней равное " + day);
-
-        //задача 3 for method
-        System.out.println("задача 3 вариант for");
-        money = 900;
-        day = 0;
-        for (; money >= 100; day++) {
-            if (day >= 5 && day % 5 == 0) {
-                continue;
+        for (int i = 0; i < massiveSecond.length; i++) {
+            if (i == massiveSecond.length - 1) {
+                System.out.println(massiveSecond[i]);
+                break;
             }
-            money = money - 100;
+            System.out.print(massiveSecond[i] + ", ");
         }
-        System.out.println("вы можете оставить свой автомобиль на количество дней равное " + day);
+        for (int i = 0; i < week.length; i++) {
+            if (i == week.length - 1) {
+                System.out.println(week[i]);
+                break;
+            }
+            System.out.print(week[i] + ", ");
+        }
+        //задача 3;
+        System.out.println("задача 3");
+        for (int i = massiveFirst.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(massiveFirst[i]);
+                break;
+            }
+            System.out.print(massiveFirst[i] + ", ");
+        }
+        for (int i = massiveSecond.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(massiveSecond[i]);
+                break;
+            }
+            System.out.print(massiveSecond[i] + ", ");
+        }
+        for (int i = week.length - 1; i >= 0; i--) {
+            if (i == 0) {
+                System.out.println(week[i]);
+                break;
+            }
+            System.out.print(week[i] + ", ");
+        }
 
-        //задача 4
+        //задача 4;
         System.out.println("задача 4");
-        double total = 0;
-        int month = 0;
-        while (true) {
-            month++;
-            total = total + 15000;
-            if (month >= 6 && month % 6 == 0) {
-                total = total * 1.07;
-            }
-            if (total >= 12_000_000) {
-                break;
-            }
-            System.out.println("на " + month + " месяц, сумма накоплений составила: " + total);
-        }
-        System.out.println("вы накопите 12_000_000 за " + month + " месяцев");
-        System.out.println("сумма накоплений составила: ");
-        System.out.printf("%.2f", total);
-
-        //задача 5
-        System.out.println("задача 5");
-        int charge = 20;
-        int minute = 0;
-        int overheats = 0;
-        while (charge <= 100) {
-            minute++;
-            if (minute >= 10 && minute % 10 == 0) {
-                overheats=overheats+1;
-                minute = minute + 2;
-                System.out.println("Внимание, Перегрев!");
+        for (int i = 0; i < massiveFirst.length; i++) {
+            if (massiveFirst[i] >= 2 && massiveFirst[i] % 2 == 0) {
                 continue;
             }
-            if (overheats > 3) {
-                System.out.println("Зарядка прервана, из-за перегрева");
-                System.out.println("Заряд составил "+ charge+ " процентов");
-                break;
-            }
-            charge = charge + 2;
+            massiveFirst[i]++;
         }
-        System.out.println("Время зарядки составило " + minute + " минут");
+        System.out.println(Arrays.toString(massiveFirst));
     }
 }
 
