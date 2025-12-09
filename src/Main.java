@@ -60,39 +60,31 @@ public class Main {
         //задача 4;
         System.out.println("задача 4");
         int[] inputArray4 = {0, 2500, 1500, 500, -500};
-        boolean[] outputArray4 = new boolean[inputArray4.length];
-        i = 0;
+        boolean[] outputArray4 = {false};
         for (int balance : inputArray4) {
             if (balance < 0) {
-                outputArray4[i] = true;
+                outputArray4[0] = true;
                 System.out.println("у клиента есть просрочки по кредиту");
                 break;
             }
-            i++;
         }
         System.out.println("остаток на счете по месяцам");
         System.out.println(Arrays.toString(inputArray4));
-        System.out.println("наличие просрочки по кредиту верно при наличии хотя бы одного true");
+        System.out.println("наличие просрочки по кредиту ");
         System.out.println(Arrays.toString(outputArray4));
 
         //задача 5;
         System.out.println("задача 5");
         int[] inputArray5 = {0, 500, 1500, -500, -1500};
-        boolean[] outputArray5 = new boolean[inputArray5.length];
-        i = 0;
-        int count = 0;
+        int[] outputArray5 = {0};
         for (int profit : inputArray5) {
             if (profit > 0) {
-                outputArray5[i] = true;
-                System.out.println((i + 1) + "-й месяц был рентабельным");
-                count++;
+                outputArray5[0] = outputArray5[0] + 1;
             }
-            i++;
         }
-        System.out.println(count + " месяцев было рентабельными");
-        System.out.println("прибыль по месяцам");
+                System.out.println("прибыль по месяцам");
         System.out.println(Arrays.toString(inputArray5));
-        System.out.println("рентабельные месяцы");
+        System.out.println("количество рентабельных месяцев");
         System.out.println(Arrays.toString(outputArray5));
 
     }
