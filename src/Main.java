@@ -73,6 +73,8 @@ public class Main {
         System.out.println("наличие просрочки по кредиту ");
         System.out.println(Arrays.toString(outputArray4));
 
+
+
         //задача 5;
         System.out.println("задача 5");
         int[] inputArray5 = {0, 500, 1500, -500, -1500};
